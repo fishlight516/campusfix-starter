@@ -72,7 +72,7 @@ def create_ticket():
         db = get_db()
         db.execute(
             "INSERT INTO tickets (title, room, description) VALUES (?, ?, ?)",
-            (title, room, description),
+            (title, description, room),
         )
         db.commit()
         logger.info("created ticket: %s (%s)", title, room)
